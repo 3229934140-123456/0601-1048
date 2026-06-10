@@ -1,0 +1,1147 @@
+{
+  "run_id": "run_20260611_035356_894acb",
+  "version": "2.0.0",
+  "build": "2001",
+  "start_time": 1781121236.3280962,
+  "end_time": 1781121239.0396056,
+  "device": {
+    "platform": "android",
+    "platform_version": "13.0",
+    "device_name": "emulator-5554",
+    "app_package": "com.example.app",
+    "app_activity": ".MainActivity",
+    "udid": null,
+    "no_reset": true,
+    "auto_launch": true,
+    "extras": {}
+  },
+  "total_duration_ms": 2711,
+  "total_cases": 6,
+  "passed_cases": 3,
+  "failed_cases": 1,
+  "skipped_cases": 0,
+  "error_cases": 2,
+  "results": [
+    {
+      "case": {
+        "name": "登录成功",
+        "description": "验证正确的账号密码可成功登录并进入首页",
+        "tags": [
+          "login",
+          "core"
+        ],
+        "risk_level": "high",
+        "steps": [
+          {
+            "action": "input",
+            "target": "id/username",
+            "value": "{{username}}",
+            "description": "输入用户名",
+            "timeout": 15
+          },
+          {
+            "action": "input",
+            "target": "id/password",
+            "value": "{{password}}",
+            "description": "输入密码",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/login_btn",
+            "value": null,
+            "description": "点击登录按钮",
+            "timeout": 10
+          },
+          {
+            "action": "wait",
+            "target": null,
+            "value": "3000",
+            "description": "等待首页加载",
+            "timeout": 10
+          },
+          {
+            "action": "assert",
+            "target": "id/home_tab",
+            "value": "exists",
+            "description": "断言首页 Tab 存在",
+            "timeout": 10
+          }
+        ],
+        "account": "default",
+        "enabled": true,
+        "timeout": 120
+      },
+      "status": "failed",
+      "start_time": 1781121236.3449988,
+      "end_time": 1781121236.696758,
+      "duration_ms": 343,
+      "retry_count": 0,
+      "step_results": [
+        {
+          "step": {
+            "action": "input",
+            "target": "id/username",
+            "value": "{{username}}",
+            "description": "输入用户名",
+            "timeout": 15
+          },
+          "status": "passed",
+          "message": "OK (65ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "input",
+            "target": "id/password",
+            "value": "{{password}}",
+            "description": "输入密码",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (40ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "click",
+            "target": "id/login_btn",
+            "value": null,
+            "description": "点击登录按钮",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (72ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "wait",
+            "target": null,
+            "value": "3000",
+            "description": "等待首页加载",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (59ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "assert",
+            "target": "id/home_tab",
+            "value": "exists",
+            "description": "断言首页 Tab 存在",
+            "timeout": 10
+          },
+          "status": "failed",
+          "message": "断言失败: 期望 exists，实际不符合 (target=id/home_tab)",
+          "duration_ms": 100,
+          "screenshot": "reports\\screenshots\\run_20260611_035356_894acb\\FAIL_run_20260611_035356_894acb_登录成功_1781121236695.png"
+        }
+      ],
+      "error_message": "断言失败: 期望 exists，实际不符合 (target=id/home_tab)",
+      "logs": [
+        "[2026-06-11 03:53:56.345] [INFO] ===== 开始执行用例: 登录成功 =====",
+        "[2026-06-11 03:53:56.346] [INFO] 风险等级: high, Tags: ['login', 'core']",
+        "[2026-06-11 03:53:56.353] [INFO] --- 第 1/1 次尝试 ---",
+        "[2026-06-11 03:53:56.362] [INFO] Step input: target=id/username, value={{username}} (输入用户名)",
+        "[2026-06-11 03:53:56.435] [INFO] Step input: target=id/password, value={{password}} (输入密码)",
+        "[2026-06-11 03:53:56.482] [INFO] Step click: target=id/login_btn, value=None (点击登录按钮)",
+        "[2026-06-11 03:53:56.559] [INFO] Step wait: target=None, value=3000 (等待首页加载)",
+        "[2026-06-11 03:53:56.627] [INFO] Step assert: target=id/home_tab, value=exists (断言首页 Tab 存在)",
+        "[2026-06-11 03:53:56.685] [ERROR] 断言失败: 期望 exists，实际不符合 (target=id/home_tab)",
+        "[2026-06-11 03:53:56.696] [WARN] 用例失败: 断言失败: 期望 exists，实际不符合 (target=id/home_tab)，第 1 次尝试",
+        "[2026-06-11 03:53:56.705] [INFO] ===== 用例结束: 登录成功 -> failed ====="
+      ],
+      "failure_screenshot": "reports\\screenshots\\run_20260611_035356_894acb\\FAIL_run_20260611_035356_894acb_登录成功_1781121236695.png",
+      "version": "2.0.0",
+      "build": "2001"
+    },
+    {
+      "case": {
+        "name": "商品下单",
+        "description": "进入商品详情页，添加到购物车并提交订单",
+        "tags": [
+          "order",
+          "trade",
+          "core"
+        ],
+        "risk_level": "high",
+        "steps": [
+          {
+            "action": "click",
+            "target": "id/home_tab",
+            "value": null,
+            "description": "进入首页",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/product_card_1",
+            "value": null,
+            "description": "点击第一个商品",
+            "timeout": 10
+          },
+          {
+            "action": "wait",
+            "target": null,
+            "value": "2000",
+            "description": "等待详情页",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/add_to_cart",
+            "value": null,
+            "description": "加入购物车",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/cart_tab",
+            "value": null,
+            "description": "进入购物车",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/select_all",
+            "value": null,
+            "description": "全选商品",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/checkout_btn",
+            "value": null,
+            "description": "提交结算",
+            "timeout": 10
+          },
+          {
+            "action": "assert",
+            "target": "id/confirm_order",
+            "value": "exists",
+            "description": "断言确认订单页",
+            "timeout": 10
+          }
+        ],
+        "account": null,
+        "enabled": true,
+        "timeout": 180
+      },
+      "status": "passed",
+      "start_time": 1781121236.7159982,
+      "end_time": 1781121237.2696471,
+      "duration_ms": 547,
+      "retry_count": 0,
+      "step_results": [
+        {
+          "step": {
+            "action": "click",
+            "target": "id/home_tab",
+            "value": null,
+            "description": "进入首页",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (31ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "click",
+            "target": "id/product_card_1",
+            "value": null,
+            "description": "点击第一个商品",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (58ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "wait",
+            "target": null,
+            "value": "2000",
+            "description": "等待详情页",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (61ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "click",
+            "target": "id/add_to_cart",
+            "value": null,
+            "description": "加入购物车",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (67ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "click",
+            "target": "id/cart_tab",
+            "value": null,
+            "description": "进入购物车",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (53ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "click",
+            "target": "id/select_all",
+            "value": null,
+            "description": "全选商品",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (62ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "click",
+            "target": "id/checkout_btn",
+            "value": null,
+            "description": "提交结算",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (81ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "assert",
+            "target": "id/confirm_order",
+            "value": "exists",
+            "description": "断言确认订单页",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (69ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        }
+      ],
+      "error_message": "",
+      "logs": [
+        "[2026-06-11 03:53:56.715] [INFO] ===== 开始执行用例: 商品下单 =====",
+        "[2026-06-11 03:53:56.717] [INFO] 风险等级: high, Tags: ['order', 'trade', 'core']",
+        "[2026-06-11 03:53:56.722] [INFO] --- 第 1/1 次尝试 ---",
+        "[2026-06-11 03:53:56.731] [INFO] Step click: target=id/home_tab, value=None (进入首页)",
+        "[2026-06-11 03:53:56.770] [INFO] Step click: target=id/product_card_1, value=None (点击第一个商品)",
+        "[2026-06-11 03:53:56.833] [INFO] Step wait: target=None, value=2000 (等待详情页)",
+        "[2026-06-11 03:53:56.903] [INFO] Step click: target=id/add_to_cart, value=None (加入购物车)",
+        "[2026-06-11 03:53:56.976] [INFO] Step click: target=id/cart_tab, value=None (进入购物车)",
+        "[2026-06-11 03:53:57.034] [INFO] Step click: target=id/select_all, value=None (全选商品)",
+        "[2026-06-11 03:53:57.103] [INFO] Step click: target=id/checkout_btn, value=None (提交结算)",
+        "[2026-06-11 03:53:57.190] [INFO] Step assert: target=id/confirm_order, value=exists (断言确认订单页)",
+        "[2026-06-11 03:53:57.269] [INFO] 用例通过 (耗时 547ms)",
+        "[2026-06-11 03:53:57.275] [INFO] ===== 用例结束: 商品下单 -> passed ====="
+      ],
+      "failure_screenshot": null,
+      "version": "2.0.0",
+      "build": "2001"
+    },
+    {
+      "case": {
+        "name": "模拟支付",
+        "description": "使用测试支付渠道完成支付流程",
+        "tags": [
+          "pay",
+          "trade",
+          "core"
+        ],
+        "risk_level": "high",
+        "steps": [
+          {
+            "action": "click",
+            "target": "id/confirm_order",
+            "value": null,
+            "description": "确认订单",
+            "timeout": 10
+          },
+          {
+            "action": "wait",
+            "target": null,
+            "value": "2000",
+            "description": "等待收银台",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/pay_mock",
+            "value": null,
+            "description": "选择模拟支付",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/pay_confirm",
+            "value": null,
+            "description": "确认支付",
+            "timeout": 10
+          },
+          {
+            "action": "wait",
+            "target": null,
+            "value": "5000",
+            "description": "等待支付回调",
+            "timeout": 10
+          },
+          {
+            "action": "assert",
+            "target": "id/pay_success",
+            "value": "exists",
+            "description": "断言支付成功页",
+            "timeout": 10
+          }
+        ],
+        "account": null,
+        "enabled": true,
+        "timeout": 180
+      },
+      "status": "passed",
+      "start_time": 1781121237.2854636,
+      "end_time": 1781121237.6366472,
+      "duration_ms": 341,
+      "retry_count": 0,
+      "step_results": [
+        {
+          "step": {
+            "action": "click",
+            "target": "id/confirm_order",
+            "value": null,
+            "description": "确认订单",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (42ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "wait",
+            "target": null,
+            "value": "2000",
+            "description": "等待收银台",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (78ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "click",
+            "target": "id/pay_mock",
+            "value": null,
+            "description": "选择模拟支付",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (30ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "click",
+            "target": "id/pay_confirm",
+            "value": null,
+            "description": "确认支付",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (48ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "wait",
+            "target": null,
+            "value": "5000",
+            "description": "等待支付回调",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (63ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "assert",
+            "target": "id/pay_success",
+            "value": "exists",
+            "description": "断言支付成功页",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (28ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        }
+      ],
+      "error_message": "",
+      "logs": [
+        "[2026-06-11 03:53:57.285] [INFO] ===== 开始执行用例: 模拟支付 =====",
+        "[2026-06-11 03:53:57.285] [INFO] 风险等级: high, Tags: ['pay', 'trade', 'core']",
+        "[2026-06-11 03:53:57.295] [INFO] --- 第 1/1 次尝试 ---",
+        "[2026-06-11 03:53:57.303] [INFO] Step click: target=id/confirm_order, value=None (确认订单)",
+        "[2026-06-11 03:53:57.354] [INFO] Step wait: target=None, value=2000 (等待收银台)",
+        "[2026-06-11 03:53:57.434] [INFO] Step click: target=id/pay_mock, value=None (选择模拟支付)",
+        "[2026-06-11 03:53:57.470] [INFO] Step click: target=id/pay_confirm, value=None (确认支付)",
+        "[2026-06-11 03:53:57.523] [INFO] Step wait: target=None, value=5000 (等待支付回调)",
+        "[2026-06-11 03:53:57.597] [INFO] Step assert: target=id/pay_success, value=exists (断言支付成功页)",
+        "[2026-06-11 03:53:57.636] [INFO] 用例通过 (耗时 341ms)",
+        "[2026-06-11 03:53:57.642] [INFO] ===== 用例结束: 模拟支付 -> passed ====="
+      ],
+      "failure_screenshot": null,
+      "version": "2.0.0",
+      "build": "2001"
+    },
+    {
+      "case": {
+        "name": "登录成功_内置",
+        "description": "使用正确的账号密码完成登录并进入首页",
+        "tags": [
+          "login",
+          "core",
+          "builtin"
+        ],
+        "risk_level": "high",
+        "steps": [
+          {
+            "action": "click",
+            "target": "id/profile_tab",
+            "value": null,
+            "description": "点击我的 Tab",
+            "timeout": 10
+          },
+          {
+            "action": "input",
+            "target": "id/et_username",
+            "value": "{{username}}",
+            "description": "输入用户名",
+            "timeout": 15
+          },
+          {
+            "action": "input",
+            "target": "id/et_password",
+            "value": "{{password}}",
+            "description": "输入密码",
+            "timeout": 10
+          },
+          {
+            "action": "screenshot",
+            "target": null,
+            "value": null,
+            "description": "登录前截图",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/btn_login",
+            "value": null,
+            "description": "点击登录按钮",
+            "timeout": 10
+          },
+          {
+            "action": "wait",
+            "target": null,
+            "value": "3000",
+            "description": "等待首页加载",
+            "timeout": 10
+          },
+          {
+            "action": "assert",
+            "target": "id/home_tab",
+            "value": "exists",
+            "description": "断言首页 Tab 存在",
+            "timeout": 10
+          },
+          {
+            "action": "screenshot",
+            "target": null,
+            "value": null,
+            "description": "登录成功后截图",
+            "timeout": 10
+          }
+        ],
+        "account": "default",
+        "enabled": true,
+        "timeout": 120
+      },
+      "status": "error",
+      "start_time": 1781121237.6491342,
+      "end_time": 1781121237.7963545,
+      "duration_ms": 138,
+      "retry_count": 0,
+      "step_results": [
+        {
+          "step": {
+            "action": "click",
+            "target": "id/profile_tab",
+            "value": null,
+            "description": "点击我的 Tab",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (59ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "input",
+            "target": "id/et_username",
+            "value": "{{username}}",
+            "description": "输入用户名",
+            "timeout": 15
+          },
+          "status": "error",
+          "message": "元素未找到或超时: id/et_username",
+          "duration_ms": 100,
+          "screenshot": "reports\\screenshots\\run_20260611_035356_894acb\\FAIL_run_20260611_035356_894acb_登录成功_内置_1781121237795.png"
+        }
+      ],
+      "error_message": "元素未找到或超时: id/et_username",
+      "logs": [
+        "[2026-06-11 03:53:57.649] [INFO] ===== 开始执行用例: 登录成功_内置 =====",
+        "[2026-06-11 03:53:57.650] [INFO] 风险等级: high, Tags: ['login', 'core', 'builtin']",
+        "[2026-06-11 03:53:57.657] [INFO] --- 第 1/1 次尝试 ---",
+        "[2026-06-11 03:53:57.665] [INFO] Step click: target=id/profile_tab, value=None (点击我的 Tab)",
+        "[2026-06-11 03:53:57.733] [INFO] Step input: target=id/et_username, value={{username}} (输入用户名)",
+        "[2026-06-11 03:53:57.789] [ERROR] 元素未找到或超时: id/et_username",
+        "[2026-06-11 03:53:57.796] [WARN] 用例失败: 元素未找到或超时: id/et_username，第 1 次尝试",
+        "[2026-06-11 03:53:57.803] [INFO] ===== 用例结束: 登录成功_内置 -> error ====="
+      ],
+      "failure_screenshot": "reports\\screenshots\\run_20260611_035356_894acb\\FAIL_run_20260611_035356_894acb_登录成功_内置_1781121237795.png",
+      "version": "2.0.0",
+      "build": "2001"
+    },
+    {
+      "case": {
+        "name": "商品下单流程_内置",
+        "description": "浏览商品->加入购物车->提交订单",
+        "tags": [
+          "order",
+          "trade",
+          "core",
+          "builtin"
+        ],
+        "risk_level": "high",
+        "steps": [
+          {
+            "action": "click",
+            "target": "id/home_tab",
+            "value": null,
+            "description": "进入首页",
+            "timeout": 10
+          },
+          {
+            "action": "swipe",
+            "target": "up",
+            "value": null,
+            "description": "向上滑动加载商品",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/product_card_0",
+            "value": null,
+            "description": "点击第一个商品卡片",
+            "timeout": 10
+          },
+          {
+            "action": "wait",
+            "target": null,
+            "value": "2000",
+            "description": "等待商品详情",
+            "timeout": 10
+          },
+          {
+            "action": "assert",
+            "target": "id/tv_product_name",
+            "value": "exists",
+            "description": "断言商品名称存在",
+            "timeout": 10
+          },
+          {
+            "action": "screenshot",
+            "target": null,
+            "value": null,
+            "description": "商品详情截图",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/btn_add_cart",
+            "value": null,
+            "description": "加入购物车",
+            "timeout": 10
+          },
+          {
+            "action": "wait",
+            "target": null,
+            "value": "1000",
+            "description": "等待加入动画",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/cart_tab",
+            "value": null,
+            "description": "切换到购物车",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/cb_select_all",
+            "value": null,
+            "description": "全选购物车商品",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/btn_checkout",
+            "value": null,
+            "description": "点击结算",
+            "timeout": 10
+          },
+          {
+            "action": "wait",
+            "target": null,
+            "value": "2000",
+            "description": "等待确认订单页",
+            "timeout": 10
+          },
+          {
+            "action": "assert",
+            "target": "id/btn_submit_order",
+            "value": "exists",
+            "description": "断言提交订单按钮存在",
+            "timeout": 10
+          }
+        ],
+        "account": null,
+        "enabled": true,
+        "timeout": 180
+      },
+      "status": "error",
+      "start_time": 1781121237.8071814,
+      "end_time": 1781121238.2955213,
+      "duration_ms": 477,
+      "retry_count": 0,
+      "step_results": [
+        {
+          "step": {
+            "action": "click",
+            "target": "id/home_tab",
+            "value": null,
+            "description": "进入首页",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (65ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "swipe",
+            "target": "up",
+            "value": null,
+            "description": "向上滑动加载商品",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (80ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "click",
+            "target": "id/product_card_0",
+            "value": null,
+            "description": "点击第一个商品卡片",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (37ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "wait",
+            "target": null,
+            "value": "2000",
+            "description": "等待商品详情",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (27ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "assert",
+            "target": "id/tv_product_name",
+            "value": "exists",
+            "description": "断言商品名称存在",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (74ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "screenshot",
+            "target": null,
+            "value": null,
+            "description": "商品详情截图",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (39ms)",
+          "duration_ms": 100,
+          "screenshot": "reports\\screenshots\\run_20260611_035356_894acb\\run_20260611_035356_894acb_商品下单流程_内置_1781121238192.png"
+        },
+        {
+          "step": {
+            "action": "click",
+            "target": "id/btn_add_cart",
+            "value": null,
+            "description": "加入购物车",
+            "timeout": 10
+          },
+          "status": "error",
+          "message": "元素未找到或超时: id/btn_add_cart",
+          "duration_ms": 100,
+          "screenshot": "reports\\screenshots\\run_20260611_035356_894acb\\FAIL_run_20260611_035356_894acb_商品下单流程_内置_1781121238295.png"
+        }
+      ],
+      "error_message": "元素未找到或超时: id/btn_add_cart",
+      "logs": [
+        "[2026-06-11 03:53:57.807] [INFO] ===== 开始执行用例: 商品下单流程_内置 =====",
+        "[2026-06-11 03:53:57.807] [INFO] 风险等级: high, Tags: ['order', 'trade', 'core', 'builtin']",
+        "[2026-06-11 03:53:57.817] [INFO] --- 第 1/1 次尝试 ---",
+        "[2026-06-11 03:53:57.827] [INFO] Step click: target=id/home_tab, value=None (进入首页)",
+        "[2026-06-11 03:53:57.898] [INFO] Step swipe: target=up, value=None (向上滑动加载商品)",
+        "[2026-06-11 03:53:57.985] [INFO] Step click: target=id/product_card_0, value=None (点击第一个商品卡片)",
+        "[2026-06-11 03:53:58.030] [INFO] Step wait: target=None, value=2000 (等待商品详情)",
+        "[2026-06-11 03:53:58.072] [INFO] Step assert: target=id/tv_product_name, value=exists (断言商品名称存在)",
+        "[2026-06-11 03:53:58.153] [INFO] Step screenshot: target=None, value=None (商品详情截图)",
+        "[2026-06-11 03:53:58.192] [INFO] 截图保存: reports\\screenshots\\run_20260611_035356_894acb\\run_20260611_035356_894acb_商品下单流程_内置_1781121238192.png",
+        "[2026-06-11 03:53:58.201] [INFO] Step click: target=id/btn_add_cart, value=None (加入购物车)",
+        "[2026-06-11 03:53:58.289] [ERROR] 元素未找到或超时: id/btn_add_cart",
+        "[2026-06-11 03:53:58.296] [WARN] 用例失败: 元素未找到或超时: id/btn_add_cart，第 1 次尝试",
+        "[2026-06-11 03:53:58.305] [INFO] ===== 用例结束: 商品下单流程_内置 -> error ====="
+      ],
+      "failure_screenshot": "reports\\screenshots\\run_20260611_035356_894acb\\FAIL_run_20260611_035356_894acb_商品下单流程_内置_1781121238295.png",
+      "version": "2.0.0",
+      "build": "2001"
+    },
+    {
+      "case": {
+        "name": "模拟支付_内置",
+        "description": "在确认订单页使用模拟支付渠道完成支付",
+        "tags": [
+          "pay",
+          "trade",
+          "core",
+          "builtin"
+        ],
+        "risk_level": "high",
+        "steps": [
+          {
+            "action": "click",
+            "target": "id/btn_submit_order",
+            "value": null,
+            "description": "提交订单",
+            "timeout": 10
+          },
+          {
+            "action": "wait",
+            "target": null,
+            "value": "3000",
+            "description": "等待收银台",
+            "timeout": 10
+          },
+          {
+            "action": "assert",
+            "target": "id/pay_channel_list",
+            "value": "exists",
+            "description": "断言支付渠道列表",
+            "timeout": 10
+          },
+          {
+            "action": "screenshot",
+            "target": null,
+            "value": null,
+            "description": "收银台截图",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/channel_mock_pay",
+            "value": null,
+            "description": "选择模拟支付",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/btn_confirm_pay",
+            "value": null,
+            "description": "确认支付",
+            "timeout": 10
+          },
+          {
+            "action": "wait",
+            "target": null,
+            "value": "5000",
+            "description": "等待支付回调",
+            "timeout": 10
+          },
+          {
+            "action": "assert",
+            "target": "id/pay_success_icon",
+            "value": "exists",
+            "description": "断言支付成功图标",
+            "timeout": 10
+          },
+          {
+            "action": "screenshot",
+            "target": null,
+            "value": null,
+            "description": "支付成功截图",
+            "timeout": 10
+          },
+          {
+            "action": "click",
+            "target": "id/btn_view_order",
+            "value": null,
+            "description": "查看订单详情",
+            "timeout": 10
+          },
+          {
+            "action": "assert",
+            "target": "id/order_status_paid",
+            "value": "exists",
+            "description": "断言订单已支付状态",
+            "timeout": 10
+          }
+        ],
+        "account": "default",
+        "enabled": true,
+        "timeout": 180
+      },
+      "status": "passed",
+      "start_time": 1781121238.3155596,
+      "end_time": 1781121239.0265162,
+      "duration_ms": 705,
+      "retry_count": 0,
+      "step_results": [
+        {
+          "step": {
+            "action": "click",
+            "target": "id/btn_submit_order",
+            "value": null,
+            "description": "提交订单",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (65ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "wait",
+            "target": null,
+            "value": "3000",
+            "description": "等待收银台",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (35ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "assert",
+            "target": "id/pay_channel_list",
+            "value": "exists",
+            "description": "断言支付渠道列表",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (38ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "screenshot",
+            "target": null,
+            "value": null,
+            "description": "收银台截图",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (76ms)",
+          "duration_ms": 100,
+          "screenshot": "reports\\screenshots\\run_20260611_035356_894acb\\run_20260611_035356_894acb_模拟支付_内置_1781121238571.png"
+        },
+        {
+          "step": {
+            "action": "click",
+            "target": "id/channel_mock_pay",
+            "value": null,
+            "description": "选择模拟支付",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (66ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "click",
+            "target": "id/btn_confirm_pay",
+            "value": null,
+            "description": "确认支付",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (59ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "wait",
+            "target": null,
+            "value": "5000",
+            "description": "等待支付回调",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (35ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "assert",
+            "target": "id/pay_success_icon",
+            "value": "exists",
+            "description": "断言支付成功图标",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (42ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "screenshot",
+            "target": null,
+            "value": null,
+            "description": "支付成功截图",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (75ms)",
+          "duration_ms": 100,
+          "screenshot": "reports\\screenshots\\run_20260611_035356_894acb\\run_20260611_035356_894acb_模拟支付_内置_1781121238881.png"
+        },
+        {
+          "step": {
+            "action": "click",
+            "target": "id/btn_view_order",
+            "value": null,
+            "description": "查看订单详情",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (39ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        },
+        {
+          "step": {
+            "action": "assert",
+            "target": "id/order_status_paid",
+            "value": "exists",
+            "description": "断言订单已支付状态",
+            "timeout": 10
+          },
+          "status": "passed",
+          "message": "OK (79ms)",
+          "duration_ms": 100,
+          "screenshot": null
+        }
+      ],
+      "error_message": "",
+      "logs": [
+        "[2026-06-11 03:53:58.315] [INFO] ===== 开始执行用例: 模拟支付_内置 =====",
+        "[2026-06-11 03:53:58.316] [INFO] 风险等级: high, Tags: ['pay', 'trade', 'core', 'builtin']",
+        "[2026-06-11 03:53:58.321] [INFO] --- 第 1/1 次尝试 ---",
+        "[2026-06-11 03:53:58.329] [INFO] Step click: target=id/btn_submit_order, value=None (提交订单)",
+        "[2026-06-11 03:53:58.403] [INFO] Step wait: target=None, value=3000 (等待收银台)",
+        "[2026-06-11 03:53:58.448] [INFO] Step assert: target=id/pay_channel_list, value=exists (断言支付渠道列表)",
+        "[2026-06-11 03:53:58.495] [INFO] Step screenshot: target=None, value=None (收银台截图)",
+        "[2026-06-11 03:53:58.571] [INFO] 截图保存: reports\\screenshots\\run_20260611_035356_894acb\\run_20260611_035356_894acb_模拟支付_内置_1781121238571.png",
+        "[2026-06-11 03:53:58.578] [INFO] Step click: target=id/channel_mock_pay, value=None (选择模拟支付)",
+        "[2026-06-11 03:53:58.651] [INFO] Step click: target=id/btn_confirm_pay, value=None (确认支付)",
+        "[2026-06-11 03:53:58.718] [INFO] Step wait: target=None, value=5000 (等待支付回调)",
+        "[2026-06-11 03:53:58.760] [INFO] Step assert: target=id/pay_success_icon, value=exists (断言支付成功图标)",
+        "[2026-06-11 03:53:58.809] [INFO] Step screenshot: target=None, value=None (支付成功截图)",
+        "[2026-06-11 03:53:58.882] [INFO] 截图保存: reports\\screenshots\\run_20260611_035356_894acb\\run_20260611_035356_894acb_模拟支付_内置_1781121238881.png",
+        "[2026-06-11 03:53:58.891] [INFO] Step click: target=id/btn_view_order, value=None (查看订单详情)",
+        "[2026-06-11 03:53:58.941] [INFO] Step assert: target=id/order_status_paid, value=exists (断言订单已支付状态)",
+        "[2026-06-11 03:53:59.026] [INFO] 用例通过 (耗时 705ms)",
+        "[2026-06-11 03:53:59.034] [INFO] ===== 用例结束: 模拟支付_内置 -> passed ====="
+      ],
+      "failure_screenshot": null,
+      "version": "2.0.0",
+      "build": "2001"
+    }
+  ],
+  "report_dir": "reports"
+}

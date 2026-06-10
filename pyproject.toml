@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "smoke-cli"
+version = "1.0.0"
+description = "移动 App 自动化冒烟测试命令行工具"
+authors = ["QA Team <qa@example.com>"]
+readme = "README.md"
+packages = [{ include = "smoke_cli" }]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+typer = ">=0.9.0"
+rich = ">=13.0.0"
+pyyaml = ">=6.0"
+jinja2 = ">=3.1.0"
+pydantic = ">=2.0.0"
+
+[tool.poetry.scripts]
+smoke = "smoke_cli.main:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

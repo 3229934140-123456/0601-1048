@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>冒烟测试报告 - 2.0.0 (run_20260611_035356_894acb)</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; background: #f5f7fa; color: #2c3e50; padding: 20px; }
+.container { max-width: 1200px; margin: 0 auto; }
+.header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 12px; margin-bottom: 20px; }
+.header h1 { font-size: 24px; margin-bottom: 10px; }
+.header .meta { opacity: 0.9; font-size: 14px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.card { background: white; border-radius: 10px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.card .label { font-size: 13px; color: #95a5a6; margin-bottom: 6px; }
+.card .value { font-size: 28px; font-weight: 700; }
+.card.pass .value { color: #27ae60; }
+.card.fail .value { color: #e74c3c; }
+.card.err .value { color: #9b59b6; }
+.card.rate .value { color: #e74c3c; }
+.section { background: white; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.section h2 { font-size: 18px; margin-bottom: 16px; color: #34495e; border-left: 4px solid #667eea; padding-left: 10px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #ecf0f1; font-size: 14px; }
+th { background: #f8f9fa; color: #7f8c8d; font-weight: 600; }
+tr:hover { background: #f8f9fa; }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+.badge.pass { background: #d5f5e3; color: #1e8449; }
+.badge.fail { background: #fadbd8; color: #c0392b; }
+.badge.err { background: #e8daef; color: #8e44ad; }
+.badge.skip { background: #fcf3cf; color: #b7950b; }
+.badge.high { background: #fadbd8; color: #c0392b; }
+.badge.medium { background: #fef9e7; color: #b7950b; }
+.badge.low { background: #d5f5e3; color: #1e8449; }
+.log-box { background: #2c3e50; color: #ecf0f1; padding: 14px; border-radius: 8px; font-family: Consolas, monospace; font-size: 13px; max-height: 240px; overflow: auto; white-space: pre-wrap; margin-bottom: 12px; }
+.screenshot { max-width: 100%; border: 1px solid #ddd; border-radius: 6px; margin-top: 8px; }
+.failure-item { border-left: 3px solid #e74c3c; padding: 10px 14px; margin-bottom: 14px; background: #fdf5f4; border-radius: 4px; }
+.bar-chart { display: flex; flex-direction: column; gap: 10px; }
+.bar-row { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.bar-row .name { width: 220px; flex-shrink: 0; }
+.bar-row .track { flex: 1; background: #ecf0f1; height: 22px; border-radius: 11px; overflow: hidden; }
+.bar-row .fill { height: 100%; background: linear-gradient(90deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: 600; }
+.footer { text-align: center; color: #95a5a6; font-size: 13px; margin-top: 30px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>📱 移动 App 冒烟测试报告</h1>
+    <div class="meta">
+      Run ID: <strong>run_20260611_035356_894acb</strong> &nbsp;|&nbsp;
+      版本: <strong>2.0.0</strong> (build 2001) &nbsp;|&nbsp;
+      设备: <strong>android 13.0</strong> / emulator-5554 &nbsp;|&nbsp;
+      时间: <strong>2026-06-11 03:53:56</strong>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card"><div class="label">总用例</div><div class="value">6</div></div>
+    <div class="card pass"><div class="label">通过</div><div class="value">3</div></div>
+    <div class="card fail"><div class="label">失败</div><div class="value">1</div></div>
+    <div class="card err"><div class="label">错误</div><div class="value">2</div></div>
+    <div class="card"><div class="label">跳过</div><div class="value" style="color:#f39c12">0</div></div>
+    <div class="card rate"><div class="label">通过率</div><div class="value">50.00%</div></div>
+    <div class="card"><div class="label">总耗时</div><div class="value" style="font-size:22px">2.71s</div></div>
+  </div>
+
+  
+  <div class="section">
+    <h2>❌ 失败用例与截图</h2>
+    
+      <div class="failure-item">
+        <strong>登录成功</strong>
+        <span class="badge fail">FAILED</span>
+        <span class="badge high">HIGH</span>
+        <div style="margin:6px 0;color:#c0392b;">原因: 断言失败: 期望 exists，实际不符合 (target=id/home_tab)</div>
+        
+          <div>截图: reports\screenshots\run_20260611_035356_894acb\FAIL_run_20260611_035356_894acb_登录成功_1781121236695.png</div>
+        
+        
+          <details style="margin-top:8px">
+            <summary style="cursor:pointer;color:#3498db;">展开关键日志 (11 条)</summary>
+            <div class="log-box">[2026-06-11 03:53:56.345] [INFO] ===== 开始执行用例: 登录成功 =====
+[2026-06-11 03:53:56.346] [INFO] 风险等级: high, Tags: ['login', 'core']
+[2026-06-11 03:53:56.353] [INFO] --- 第 1/1 次尝试 ---
+[2026-06-11 03:53:56.362] [INFO] Step input: target=id/username, value={{username}} (输入用户名)
+[2026-06-11 03:53:56.435] [INFO] Step input: target=id/password, value={{password}} (输入密码)
+[2026-06-11 03:53:56.482] [INFO] Step click: target=id/login_btn, value=None (点击登录按钮)
+[2026-06-11 03:53:56.559] [INFO] Step wait: target=None, value=3000 (等待首页加载)
+[2026-06-11 03:53:56.627] [INFO] Step assert: target=id/home_tab, value=exists (断言首页 Tab 存在)
+[2026-06-11 03:53:56.685] [ERROR] 断言失败: 期望 exists，实际不符合 (target=id/home_tab)
+[2026-06-11 03:53:56.696] [WARN] 用例失败: 断言失败: 期望 exists，实际不符合 (target=id/home_tab)，第 1 次尝试
+[2026-06-11 03:53:56.705] [INFO] ===== 用例结束: 登录成功 -> failed =====</div>
+          </details>
+        
+      </div>
+    
+      <div class="failure-item">
+        <strong>登录成功_内置</strong>
+        <span class="badge err">ERROR</span>
+        <span class="badge high">HIGH</span>
+        <div style="margin:6px 0;color:#c0392b;">原因: 元素未找到或超时: id/et_username</div>
+        
+          <div>截图: reports\screenshots\run_20260611_035356_894acb\FAIL_run_20260611_035356_894acb_登录成功_内置_1781121237795.png</div>
+        
+        
+          <details style="margin-top:8px">
+            <summary style="cursor:pointer;color:#3498db;">展开关键日志 (8 条)</summary>
+            <div class="log-box">[2026-06-11 03:53:57.649] [INFO] ===== 开始执行用例: 登录成功_内置 =====
+[2026-06-11 03:53:57.650] [INFO] 风险等级: high, Tags: ['login', 'core', 'builtin']
+[2026-06-11 03:53:57.657] [INFO] --- 第 1/1 次尝试 ---
+[2026-06-11 03:53:57.665] [INFO] Step click: target=id/profile_tab, value=None (点击我的 Tab)
+[2026-06-11 03:53:57.733] [INFO] Step input: target=id/et_username, value={{username}} (输入用户名)
+[2026-06-11 03:53:57.789] [ERROR] 元素未找到或超时: id/et_username
+[2026-06-11 03:53:57.796] [WARN] 用例失败: 元素未找到或超时: id/et_username，第 1 次尝试
+[2026-06-11 03:53:57.803] [INFO] ===== 用例结束: 登录成功_内置 -> error =====</div>
+          </details>
+        
+      </div>
+    
+      <div class="failure-item">
+        <strong>商品下单流程_内置</strong>
+        <span class="badge err">ERROR</span>
+        <span class="badge high">HIGH</span>
+        <div style="margin:6px 0;color:#c0392b;">原因: 元素未找到或超时: id/btn_add_cart</div>
+        
+          <div>截图: reports\screenshots\run_20260611_035356_894acb\FAIL_run_20260611_035356_894acb_商品下单流程_内置_1781121238295.png</div>
+        
+        
+          <details style="margin-top:8px">
+            <summary style="cursor:pointer;color:#3498db;">展开关键日志 (14 条)</summary>
+            <div class="log-box">[2026-06-11 03:53:57.807] [INFO] ===== 开始执行用例: 商品下单流程_内置 =====
+[2026-06-11 03:53:57.807] [INFO] 风险等级: high, Tags: ['order', 'trade', 'core', 'builtin']
+[2026-06-11 03:53:57.817] [INFO] --- 第 1/1 次尝试 ---
+[2026-06-11 03:53:57.827] [INFO] Step click: target=id/home_tab, value=None (进入首页)
+[2026-06-11 03:53:57.898] [INFO] Step swipe: target=up, value=None (向上滑动加载商品)
+[2026-06-11 03:53:57.985] [INFO] Step click: target=id/product_card_0, value=None (点击第一个商品卡片)
+[2026-06-11 03:53:58.030] [INFO] Step wait: target=None, value=2000 (等待商品详情)
+[2026-06-11 03:53:58.072] [INFO] Step assert: target=id/tv_product_name, value=exists (断言商品名称存在)
+[2026-06-11 03:53:58.153] [INFO] Step screenshot: target=None, value=None (商品详情截图)
+[2026-06-11 03:53:58.192] [INFO] 截图保存: reports\screenshots\run_20260611_035356_894acb\run_20260611_035356_894acb_商品下单流程_内置_1781121238192.png
+[2026-06-11 03:53:58.201] [INFO] Step click: target=id/btn_add_cart, value=None (加入购物车)
+[2026-06-11 03:53:58.289] [ERROR] 元素未找到或超时: id/btn_add_cart
+[2026-06-11 03:53:58.296] [WARN] 用例失败: 元素未找到或超时: id/btn_add_cart，第 1 次尝试
+[2026-06-11 03:53:58.305] [INFO] ===== 用例结束: 商品下单流程_内置 -> error =====</div>
+          </details>
+        
+      </div>
+    
+  </div>
+  
+
+  <div class="section">
+    <h2>⏱️ 耗时排行 Top 10 (秒)</h2>
+    <div class="bar-chart">
+      
+        <div class="bar-row">
+          <div class="name">模拟支付_内置</div>
+          <div class="track">
+            <div class="fill" style="width:100.0%">
+              0.70s
+            </div>
+          </div>
+        </div>
+      
+        <div class="bar-row">
+          <div class="name">商品下单</div>
+          <div class="track">
+            <div class="fill" style="width:78.0%">
+              0.55s
+            </div>
+          </div>
+        </div>
+      
+        <div class="bar-row">
+          <div class="name">商品下单流程_内置</div>
+          <div class="track">
+            <div class="fill" style="width:68.0%">
+              0.48s
+            </div>
+          </div>
+        </div>
+      
+        <div class="bar-row">
+          <div class="name">登录成功</div>
+          <div class="track">
+            <div class="fill" style="width:49.0%">
+              0.34s
+            </div>
+          </div>
+        </div>
+      
+        <div class="bar-row">
+          <div class="name">模拟支付</div>
+          <div class="track">
+            <div class="fill" style="width:48.0%">
+              0.34s
+            </div>
+          </div>
+        </div>
+      
+        <div class="bar-row">
+          <div class="name">登录成功_内置</div>
+          <div class="track">
+            <div class="fill" style="width:20.0%">
+              0.14s
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📋 全部用例明细</h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>用例名称</th><th>风险</th><th>标签</th><th>状态</th><th>耗时</th><th>重试</th><th>步骤</th></tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td>1</td>
+            <td>登录成功</td>
+            <td><span class="badge high">HIGH</span></td>
+            <td>login, core</td>
+            <td><span class="badge failed">FAILED</span></td>
+            <td>0.34s</td>
+            <td>0</td>
+            <td>5/5</td>
+          </tr>
+        
+          <tr>
+            <td>2</td>
+            <td>商品下单</td>
+            <td><span class="badge high">HIGH</span></td>
+            <td>order, trade, core</td>
+            <td><span class="badge passed">PASSED</span></td>
+            <td>0.55s</td>
+            <td>0</td>
+            <td>8/8</td>
+          </tr>
+        
+          <tr>
+            <td>3</td>
+            <td>模拟支付</td>
+            <td><span class="badge high">HIGH</span></td>
+            <td>pay, trade, core</td>
+            <td><span class="badge passed">PASSED</span></td>
+            <td>0.34s</td>
+            <td>0</td>
+            <td>6/6</td>
+          </tr>
+        
+          <tr>
+            <td>4</td>
+            <td>登录成功_内置</td>
+            <td><span class="badge high">HIGH</span></td>
+            <td>login, core, builtin</td>
+            <td><span class="badge error">ERROR</span></td>
+            <td>0.14s</td>
+            <td>0</td>
+            <td>2/8</td>
+          </tr>
+        
+          <tr>
+            <td>5</td>
+            <td>商品下单流程_内置</td>
+            <td><span class="badge high">HIGH</span></td>
+            <td>order, trade, core, builtin</td>
+            <td><span class="badge error">ERROR</span></td>
+            <td>0.48s</td>
+            <td>0</td>
+            <td>7/13</td>
+          </tr>
+        
+          <tr>
+            <td>6</td>
+            <td>模拟支付_内置</td>
+            <td><span class="badge high">HIGH</span></td>
+            <td>pay, trade, core, builtin</td>
+            <td><span class="badge passed">PASSED</span></td>
+            <td>0.70s</td>
+            <td>0</td>
+            <td>11/11</td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  
+  <div class="section">
+    <h2>🔎 关键日志 (ERROR/WARN)</h2>
+    
+      <div style="margin-bottom:10px">
+        <strong>登录成功</strong>
+        <div class="log-box">[2026-06-11 03:53:56.685] [ERROR] 断言失败: 期望 exists，实际不符合 (target=id/home_tab)
+[2026-06-11 03:53:56.696] [WARN] 用例失败: 断言失败: 期望 exists，实际不符合 (target=id/home_tab)，第 1 次尝试</div>
+      </div>
+    
+      <div style="margin-bottom:10px">
+        <strong>登录成功_内置</strong>
+        <div class="log-box">[2026-06-11 03:53:57.789] [ERROR] 元素未找到或超时: id/et_username
+[2026-06-11 03:53:57.796] [WARN] 用例失败: 元素未找到或超时: id/et_username，第 1 次尝试</div>
+      </div>
+    
+      <div style="margin-bottom:10px">
+        <strong>商品下单流程_内置</strong>
+        <div class="log-box">[2026-06-11 03:53:58.289] [ERROR] 元素未找到或超时: id/btn_add_cart
+[2026-06-11 03:53:58.296] [WARN] 用例失败: 元素未找到或超时: id/btn_add_cart，第 1 次尝试</div>
+      </div>
+    
+  </div>
+  
+
+  <div class="footer">
+    由 smoke-cli 自动生成 · 2026-06-11 03:54:18
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+project_name: mobile_smoke_test
+version: 1.0.0
+build: '0001'
+report_dir: ./reports
+screenshot_dir: ./reports/screenshots
+log_dir: ./reports/logs
+default_retry: 1
+devices:
+- platform: android
+  platform_version: '13.0'
+  device_name: emulator-5554
+  app_package: com.example.app
+  app_activity: .MainActivity
+  udid: null
+  no_reset: true
+  auto_launch: true
+  extras: {}
+accounts: []
+cases:
+- name: 登录成功
+  description: 验证正确的账号密码可成功登录并进入首页
+  tags:
+  - login
+  - core
+  risk_level: high
+  steps:
+  - action: input
+    target: id/username
+    value: '{{username}}'
+    description: 输入用户名
+    timeout: 15
+  - action: input
+    target: id/password
+    value: '{{password}}'
+    description: 输入密码
+    timeout: 10
+  - action: click
+    target: id/login_btn
+    value: null
+    description: 点击登录按钮
+    timeout: 10
+  - action: wait
+    target: null
+    value: '3000'
+    description: 等待首页加载
+    timeout: 10
+  - action: assert
+    target: id/home_tab
+    value: exists
+    description: 断言首页 Tab 存在
+    timeout: 10
+  account: default
+  enabled: true
+  timeout: 120
+- name: 商品下单
+  description: 进入商品详情页，添加到购物车并提交订单
+  tags:
+  - order
+  - trade
+  - core
+  risk_level: high
+  steps:
+  - action: click
+    target: id/home_tab
+    value: null
+    description: 进入首页
+    timeout: 10
+  - action: click
+    target: id/product_card_1
+    value: null
+    description: 点击第一个商品
+    timeout: 10
+  - action: wait
+    target: null
+    value: '2000'
+    description: 等待详情页
+    timeout: 10
+  - action: click
+    target: id/add_to_cart
+    value: null
+    description: 加入购物车
+    timeout: 10
+  - action: click
+    target: id/cart_tab
+    value: null
+    description: 进入购物车
+    timeout: 10
+  - action: click
+    target: id/select_all
+    value: null
+    description: 全选商品
+    timeout: 10
+  - action: click
+    target: id/checkout_btn
+    value: null
+    description: 提交结算
+    timeout: 10
+  - action: assert
+    target: id/confirm_order
+    value: exists
+    description: 断言确认订单页
+    timeout: 10
+  account: null
+  enabled: true
+  timeout: 180
+- name: 模拟支付
+  description: 使用测试支付渠道完成支付流程
+  tags:
+  - pay
+  - trade
+  - core
+  risk_level: high
+  steps:
+  - action: click
+    target: id/confirm_order
+    value: null
+    description: 确认订单
+    timeout: 10
+  - action: wait
+    target: null
+    value: '2000'
+    description: 等待收银台
+    timeout: 10
+  - action: click
+    target: id/pay_mock
+    value: null
+    description: 选择模拟支付
+    timeout: 10
+  - action: click
+    target: id/pay_confirm
+    value: null
+    description: 确认支付
+    timeout: 10
+  - action: wait
+    target: null
+    value: '5000'
+    description: 等待支付回调
+    timeout: 10
+  - action: assert
+    target: id/pay_success
+    value: exists
+    description: 断言支付成功页
+    timeout: 10
+  account: null
+  enabled: true
+  timeout: 180
+- name: 查看消息
+  description: 验证消息中心可正常加载并显示消息列表
+  tags:
+  - message
+  - smoke
+  risk_level: medium
+  steps:
+  - action: click
+    target: id/message_icon
+    value: null
+    description: 点击消息图标
+    timeout: 10
+  - action: wait
+    target: null
+    value: '2000'
+    description: 等待消息列表
+    timeout: 10
+  - action: assert
+    target: id/message_list
+    value: exists
+    description: 断言消息列表存在
+    timeout: 10
+  - action: swipe
+    target: up
+    value: null
+    description: 滑动查看更多消息
+    timeout: 10
+  account: null
+  enabled: true
+  timeout: 120
+- name: 设置页检查
+  description: 检查设置页各入口展示正常，版本号显示正确
+  tags:
+  - setting
+  - smoke
+  risk_level: medium
+  steps:
+  - action: click
+    target: id/mine_tab
+    value: null
+    description: 进入我的页
+    timeout: 10
+  - action: click
+    target: id/settings
+    value: null
+    description: 点击设置
+    timeout: 10
+  - action: assert
+    target: id/account_setting
+    value: exists
+    description: 断言账号设置入口
+    timeout: 10
+  - action: assert
+    target: id/privacy_setting
+    value: exists
+    description: 断言隐私设置入口
+    timeout: 10
+  - action: assert
+    target: id/version_info
+    value: '{{version}}'
+    description: 断言版本号正确
+    timeout: 10
+  - action: click
+    target: id/logout
+    value: null
+    description: 退出登录
+    timeout: 10
+  account: null
+  enabled: true
+  timeout: 120

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<title>版本对比 - 1.0.0 vs 2.0.0</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; background: #f5f7fa; color: #2c3e50; padding: 20px; }
+.container { max-width: 1200px; margin: 0 auto; }
+.header { background: linear-gradient(135deg, #11998e, #38ef7d); color: white; padding: 30px; border-radius: 12px; margin-bottom: 20px; }
+.header h1 { font-size: 22px; margin-bottom: 10px; }
+.vs { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; margin: 20px 0; }
+.vs .side { background: rgba(255,255,255,0.15); padding: 14px; border-radius: 8px; }
+.vs .center { font-size: 28px; font-weight: 800; }
+.section { background: white; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.section h2 { font-size: 17px; margin-bottom: 14px; border-left: 4px solid #11998e; padding-left: 10px; color: #34495e; }
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 18px; }
+.metric { background: #f8f9fa; border-radius: 8px; padding: 14px; }
+.metric .label { font-size: 13px; color: #7f8c8d; }
+.metric .v { font-size: 12px; color: #95a5a6; text-decoration: line-through; margin-top: 4px; }
+.metric .val { font-size: 22px; font-weight: 700; margin-top: 4px; }
+.metric .delta { font-size: 13px; margin-top: 4px; font-weight: 600; }
+.up { color: #27ae60; }
+.down { color: #e74c3c; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { padding: 9px 12px; border-bottom: 1px solid #ecf0f1; text-align: left; }
+th { background: #f8f9fa; color: #7f8c8d; }
+tr:hover { background: #f8f9fa; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+.tag.regression { background: #fadbd8; color: #c0392b; }
+.tag.fixed { background: #d5f5e3; color: #1e8449; }
+.tag.new { background: #d4e6f1; color: #2874a6; }
+.tag.removed { background: #fcf3cf; color: #b7950b; }
+.footer { text-align: center; color: #95a5a6; font-size: 13px; margin-top: 30px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>🔍 版本冒烟测试对比报告</h1>
+    <div class="vs">
+      <div class="side"><strong>版本 A (基准)</strong><br/>1.0.0 · run_id=run_20260611_035343_77a4a1</div>
+      <div class="center">VS</div>
+      <div class="side"><strong>版本 B (目标)</strong><br/>2.0.0 · run_id=run_20260611_035356_894acb</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📊 关键指标变化</h2>
+    <div class="metrics">
+      <div class="metric">
+        <div class="label">通过率</div>
+        <div class="v">50.00% →</div>
+        <div class="val">50.00%</div>
+        <div class="delta up">
+          +0.00pp
+        </div>
+      </div>
+      <div class="metric">
+        <div class="label">总耗时</div>
+        <div class="val">2.71s</div>
+        <div class="delta down">
+          -0.03s
+        </div>
+      </div>
+      <div class="metric">
+        <div class="label">✅ 修复用例</div>
+        <div class="val up">0</div>
+      </div>
+      <div class="metric">
+        <div class="label">❌ 回归用例</div>
+        <div class="val down">0</div>
+      </div>
+      <div class="metric">
+        <div class="label">➕ 新增用例</div>
+        <div class="val" style="color:#2874a6">0</div>
+      </div>
+      <div class="metric">
+        <div class="label">➖ 移除用例</div>
+        <div class="val" style="color:#b7950b">0</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📋 用例状态对比明细</h2>
+    <table>
+      <thead>
+        <tr><th>用例</th><th>版本A</th><th>版本B</th><th>耗时A</th><th>耗时B</th><th>变化</th></tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td>商品下单</td>
+            <td>✅ PASS</td>
+            <td>✅ PASS</td>
+            <td>0.54s</td>
+            <td>0.55s</td>
+            <td class="down">+0.00s</td>
+          </tr>
+        
+          <tr>
+            <td>商品下单流程_内置</td>
+            <td>⚠️ ERR</td>
+            <td>⚠️ ERR</td>
+            <td>0.47s</td>
+            <td>0.48s</td>
+            <td class="down">+0.00s</td>
+          </tr>
+        
+          <tr>
+            <td>模拟支付</td>
+            <td>✅ PASS</td>
+            <td>✅ PASS</td>
+            <td>0.34s</td>
+            <td>0.34s</td>
+            <td class="down">+0.00s</td>
+          </tr>
+        
+          <tr>
+            <td>模拟支付_内置</td>
+            <td>✅ PASS</td>
+            <td>✅ PASS</td>
+            <td>0.71s</td>
+            <td>0.70s</td>
+            <td class="up">-0.01s</td>
+          </tr>
+        
+          <tr>
+            <td>登录成功</td>
+            <td>❌ FAIL</td>
+            <td>❌ FAIL</td>
+            <td>0.34s</td>
+            <td>0.34s</td>
+            <td class="">0.00s</td>
+          </tr>
+        
+          <tr>
+            <td>登录成功_内置</td>
+            <td>⚠️ ERR</td>
+            <td>⚠️ ERR</td>
+            <td>0.14s</td>
+            <td>0.14s</td>
+            <td class="up">-0.00s</td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">由 smoke-cli compare 自动生成 · 2026-06-11 03:55:06</div>
+</div>
+</body>
+</html>
